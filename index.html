@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Театр «Гелион» — Афиша</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="site-header" id="home">
+        <div class="container">
+            <a href="#home" class="logo">Театр «Гелион»</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#poster" class="active">Афиша</a></li>
+                    <li><a href="#about">О театре</a></li>
+                    <li><a href="#troupe">Труппа</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                </ul>
+            </nav>
+            <button id="mobile-menu-button" class="mobile-menu-btn">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero" id="hero">
+            <div class="container">
+                <h1>Добро пожаловать в мир искусства</h1>
+                <p>Откройте для себя магию театра вместе с нами. Новый сезон — новые премьеры.</p>
+                <a href="#poster" class="btn btn-primary">Смотреть афишу</a>
+            </div>
+        </section>
+
+        <!-- АФИША -->
+        <section id="poster" class="poster-section">
+            <div class="container">
+                <h2>Афиша</h2>
+
+                <!-- Вкладки -->
+                <div class="tabs">
+                    <button class="tab-btn active" data-category="all">Все</button>
+                    <button class="tab-btn" data-category="play">Пьесы</button>
+                    <button class="tab-btn" data-category="opera">Опера</button>
+                    <button class="tab-btn" data-category="operetta">Оперетта</button>
+                </div>
+
+                <!-- Сетка карточек -->
+                <div id="poster-container" class="poster-grid">
+                    <!-- Заполняется через JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- О ТЕАТРЕ -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2>О театре</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Театр «Гелион» основан в 2008 году. Наша миссия — дарить зрителям встречу с высоким искусством, сохраняя классические традиции и открывая новые имена.</p>
+                        <p>За годы существования театр выпустил более 100 премьер, многие из которых были удостоены престижных театральных премий, включая «Золотую маску» и «Хрустальную Турандот».</p>
+                        <p>Сегодня в репертуаре театра — пьесы, опера и оперетта. Мы гордимся нашей труппой, в которой состоят заслуженные артисты России и молодые талантливые актёры.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="театр гелион.webp" alt="Здание театра Геликон">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ТРУППА -->
+        <section id="troupe" class="troupe-section">
+            <div class="container">
+                <h2>Наша труппа</h2>
+                <div class="troupe-grid">
+                    <div class="actor-card">
+                        <img src="александр белов.jpg" alt="Актёр 1">
+                        <h3>Александр Белов</h3>
+                        <p>Ведущий актёр</p>
+                    </div>
+                    <div class="actor-card">
+                        <img src="елена соколова.avif" alt="Актёр 2">
+                        <h3>Елена Соколова</h3>
+                        <p>Примадонна</p>
+                    </div>
+                    <div class="actor-card">
+                        <img src="дмиртий волков.jpg" alt="Актёр 3">
+                        <h3>Дмитрий Волков</h3>
+                        <p>Солист оперы</p>
+                    </div>
+                    <div class="actor-card">
+                        <img src="анна кузнецова.jpg" alt="Актёр 4">
+                        <h3>Анна Кузнецова</h3>
+                        <p>Актриса драмы</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- КОНТАКТЫ -->
+        <section id="contacts" class="contacts-section">
+            <div class="container">
+                <h2>Контакты</h2>
+                <div class="contacts-content">
+                    <div class="contacts-info">
+                        <div class="contact-item">
+                            <h3>Адрес</h3>
+                            <p>г. Москва, ул. Театральная, д. 1</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>Телефон</h3>
+                            <p>+7 (902) 689 89 57</p>
+                            <p>+7 (495) 894 43 32 (касса)</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>Email</h3>
+                            <p>info@gelikon-theatre.ru</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>Часы работы кассы</h3>
+                            <p>Ежедневно: 11:00 – 20:00</p>
+                            <p>Перерыв: 14:00 – 15:00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Модальное окно -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <img id="modal-img" src="" alt="">
+            <div class="modal-info">
+                <h2 id="modal-title"></h2>
+                <p id="modal-category"></p>
+                <p id="modal-date"></p>
+                <p id="modal-description"></p>
+                <button class="btn btn-primary" id="modal-buy-btn">Купить билет</button>
+
+<!-- НОВЫЙ БЛОК ВЫБОРА БИЛЕТА (изначально скрыт) -->
+<div id="ticket-selection" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid #444;">
+    <h3 style="color: #4caf50; margin-bottom: 15px;">Выбор билета</h3>
+    
+    <div style="margin-bottom: 15px;">
+        <label for="ticket-date" style="display: block; margin-bottom: 5px; color: #ccc;">Выберите дату:</label>
+        <input type="date" id="ticket-date" style="width: 100%; padding: 10px; background: #333; border: 1px solid #555; color: #fff; border-radius: 4px;">
+    </div>
+    
+    <div style="margin-bottom: 15px;">
+        <label style="display: block; margin-bottom: 5px; color: #ccc;">Выберите место (от 1 до 60):</label>
+        <div style="display: flex; gap: 10px; align-items: center;">
+            <input type="number" id="ticket-seat" min="1" max="60" placeholder="Введите номер" style="flex: 1; padding: 10px; background: #333; border: 1px solid #555; color: #fff; border-radius: 4px;">
+            <span style="color: #888;">или</span>
+            <button id="show-seat-map-btn" type="button" style="padding: 10px 15px; background: #2e7d32; color: white; border: none; border-radius: 4px; cursor: pointer;">Схема зала</button>
+        </div>
+    </div>
+    
+    <!-- Схема зала (изначально скрыта) -->
+    <div id="seat-map" style="display: none; margin: 15px 0; padding: 15px; background: #2a2a2a; border-radius: 8px;">
+        <p style="text-align: center; margin-bottom: 10px; color: #ccc;">🎭 СЦЕНА 🎭</p>
+        <div id="seats-grid" style="display: grid; grid-template-columns: repeat(10, 1fr); gap: 8px; max-height: 300px; overflow-y: auto; padding: 10px;"></div>
+    </div>
+    
+    <button id="confirm-ticket-btn" style="width: 100%; padding: 12px; background: #4caf50; color: #0d0d0d; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; margin-top: 15px;">Подтвердить билет</button>
+    
+    <div id="ticket-message" style="margin-top: 15px; font-size: 14px; text-align: center;"></div>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2026 Театр «Гелион». Все права защищены.</p>
+            <p>Адрес: г. Москва, ул. Театральная, д. 1</p>
+            <p>Телефон: +7 (902) 689 89 57</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
